@@ -51,7 +51,7 @@ export const Stats = () => {
     <section id="stats" className="bg-gradient-to-b from-background via-cyan/5 to-background py-32 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-cyan/5">
         <StatCard target={24} unit="H" label="NON-STOP HACKING" />
-        <StatCard target={300} unit="+" label="HACKERS WORLDWIDE" />
+        <StatCard target={300} unit="+" label="DEVELOPERS" />
         <StatCard target={1} suffix="LAKH" label="PRIZE POOL (₹)" />
         <StatCard target={6} label="DOMAINS" />
       </div>
