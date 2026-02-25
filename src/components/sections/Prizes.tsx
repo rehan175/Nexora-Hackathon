@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react';
@@ -9,7 +8,7 @@ const PrizeCard = ({ rank, icon, amount, label, perks, highlight }: { rank: stri
   }`}>
     <div className="font-headline text-[12px] tracking-[4px] text-muted-foreground mb-4">{rank}</div>
     <div className="text-5xl mb-6">{icon}</div>
-    <div className={`font-headline text-5xl font-black mb-2 ${highlight ? 'text-gold drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]' : 'text-gray-400'}`}>
+    <div className={`font-headline text-4xl md:text-5xl font-black mb-2 ${highlight ? 'text-gold drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]' : 'text-gray-400'}`}>
       {amount}
     </div>
     <div className="text-[13px] text-muted-foreground tracking-[2px] uppercase mb-8">{label}</div>
@@ -36,15 +35,15 @@ export const Prizes = () => {
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-end">
         <PrizeCard 
-          rank="RANK 02" icon="🥈" amount="$15K" label="SILVER CORE"
+          rank="RANK 02" icon="🥈" amount="₹30,000" label="SILVER CORE"
           perks={['Cash Prize', 'Internship Opportunities', 'Mentor Network Access', 'Hardware Kit']}
         />
         <PrizeCard 
-          rank="RANK 01" icon="🏆" amount="$25K" label="PRIME CORE" highlight
-          perks={['Cash Prize', 'VC Fast-Track Meetings', 'Cloud Credits ($100K)', 'Global Stage Feature', 'Incubation Program']}
+          rank="RANK 01" icon="🏆" amount="₹50,000" label="PRIME CORE" highlight
+          perks={['Cash Prize', 'VC Fast-Track Meetings', 'Cloud Credits', 'Global Stage Feature', 'Incubation Program']}
         />
         <PrizeCard 
-          rank="RANK 03" icon="🥉" amount="$10K" label="BRONZE CORE"
+          rank="RANK 03" icon="🥉" amount="₹20,000" label="BRONZE CORE"
           perks={['Cash Prize', 'Community Recognition', 'Swag Pack Pro', 'Certificate']}
         />
       </div>
