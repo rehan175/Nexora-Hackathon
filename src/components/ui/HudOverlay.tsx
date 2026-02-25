@@ -28,9 +28,9 @@ export const HudOverlay = () => {
         UPTIME: <span>{uptime}</span>
       </div>
       <div className={`${hudClasses} top-4 right-4 text-right`}>
-        LAT: 12.9716° N<br />
-        LNG: 77.5946° E<br />
-        SECTOR: BENGALURU
+        LAT: 13.0358° N<br />
+        LNG: 77.6200° E<br />
+        SECTOR: NAGAVARA
       </div>
       <div className={`${hudClasses} bottom-4 left-4`}>
         SIGNAL: ████████░░ 82%<br />
