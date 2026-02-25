@@ -27,14 +27,14 @@ export default function Home() {
       <AboutVision />
       <VenueContact />
 
-      <footer className="relative z-10 px-8 py-12 border-t border-cyan/10 flex flex-col md:flex-row items-center justify-between font-code text-[11px] text-muted-foreground/40 tracking-[2px] gap-8">
+      <footer className="relative z-10 px-8 py-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between font-code text-[11px] text-white tracking-[2px] gap-8">
         <div className="font-headline font-black text-xl tracking-[6px] text-white">NEXORA</div>
-        <div>© 2025 NEXORA INC. ALL RIGHTS RESERVED.</div>
+        <div className="opacity-80">© 2026 NEXORA INC. ALL RIGHTS RESERVED.</div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-cyan transition-colors">PRIVACY</a>
           <a href="#" className="hover:text-cyan transition-colors">TERMS</a>
           <a href="#" className="hover:text-cyan transition-colors">CONTACT</a>
-          <a href="#" className="hover:text-cyan transition-colors">DISCORD</a>
+          <a href="#" className="hover:text-cyan transition-colors">SLACK</a>
         </div>
       </footer>
       
