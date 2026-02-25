@@ -1,11 +1,11 @@
-
 "use client"
 
 import React, { useState } from 'react';
 import { generateProblemStatements, ProblemStatementGeneratorOutput } from '@/ai/flows/ai-problem-statement-generator';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Loader2, Zap } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const TRACKS_DATA = [
   { id: 'ai', icon: '🤖', name: 'ARTIFICIAL INTELLIGENCE', desc: 'Build the next generation of intelligent systems—LLMs, computer vision, autonomous agents, and beyond.', tag: 'NEURAL SYSTEMS' },
@@ -17,6 +17,7 @@ const TRACKS_DATA = [
 ];
 
 export const Tracks = () => {
+  const router = useRouter();
   const [selectedTrack, setSelectedTrack] = useState<typeof TRACKS_DATA[0] | null>(null);
   const [problems, setProblems] = useState<ProblemStatementGeneratorOutput>([]);
   const [loading, setLoading] = useState(false);
@@ -108,7 +109,7 @@ export const Tracks = () => {
           <Button 
             className="w-full bg-transparent border border-cyan text-cyan hover:bg-cyan hover:text-background font-headline text-xs tracking-[3px]"
             onClick={() => {
-              document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+              router.push('/register');
               setSelectedTrack(null);
             }}
           >

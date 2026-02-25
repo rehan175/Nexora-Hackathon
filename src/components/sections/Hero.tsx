@@ -1,10 +1,11 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
+import { useRouter } from 'next/navigation';
 
 export const Hero = () => {
+  const router = useRouter();
   const [timeLeft, setTimeLeft] = useState({ d: '00', h: '00', m: '00', s: '00' });
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export const Hero = () => {
       </div>
 
       <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-        <div className="flex items-center gap-4 text-cyan font-code text-xs tracking-[4px] mb-6 uppercase">
+        <div className="flex items-center justify-center gap-4 text-cyan font-code text-xs tracking-[4px] mb-6 uppercase">
           <div className="h-[1px] w-12 bg-cyan/40" />
           ◈ 24-HOUR HACKATHON ◈
           <div className="h-[1px] w-12 bg-cyan/40" />
@@ -82,7 +83,7 @@ export const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button 
-            onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => router.push('/register')}
             className="bg-cyan text-background font-headline font-bold text-xs tracking-widest px-10 py-7 cyber-clip hover:glow-border transition-all"
           >
             REGISTER NOW
