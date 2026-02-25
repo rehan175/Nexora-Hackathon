@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-const PrizeCard = ({ rank, icon, amount, label, perks, highlight }: { rank: string; icon: string; amount: string; label: string; perks: string[]; highlight?: boolean }) => (
-  <div className={`group bg-card/80 border border-cyan/10 text-center p-12 transition-all hover:-translate-y-2 relative overflow-hidden ${
-    highlight ? 'border-gold/30 bg-gradient-to-b from-gold/[0.05] to-card/80 scale-105 z-[2]' : ''
+const PrizeCard = ({ rank, icon, amount, label, perks, highlight, isSpecial }: { rank: string; icon: string; amount: string; label: string; perks: string[]; highlight?: boolean; isSpecial?: boolean }) => (
+  <div className={`group bg-card/80 border border-cyan/10 text-center transition-all hover:-translate-y-2 relative overflow-hidden ${
+    highlight ? 'border-gold/30 bg-gradient-to-b from-gold/[0.05] to-card/80 scale-105 z-[2] p-12' : isSpecial ? 'p-8 border-cyan/20 bg-cyan/5' : 'p-12'
   }`}>
     <div className="font-headline text-[12px] tracking-[4px] text-muted-foreground mb-4">{rank}</div>
     <div className="text-5xl mb-6">{icon}</div>
@@ -33,19 +33,35 @@ export const Prizes = () => {
         <div className="w-20 h-0.5 bg-cyan relative after:content-[''] after:absolute after:-right-5 after:-top-[3px] after:w-2 after:h-2 after:border-2 after:border-cyan after:rounded-full mx-auto" />
       </div>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-end">
+      {/* Main Podium */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 items-end mb-16">
         <PrizeCard 
-          rank="RANK 02" icon="🥈" amount="₹30,000" label="SILVER CORE"
+          rank="RANK 02" icon="🥈" amount="₹25,000" label="SILVER CORE"
           perks={['Cash Prize', 'Internship Opportunities', 'Mentor Network Access', 'Hardware Kit']}
         />
         <PrizeCard 
-          rank="RANK 01" icon="🏆" amount="₹50,000" label="PRIME CORE" highlight
+          rank="RANK 01" icon="🏆" amount="₹40,000" label="PRIME CORE" highlight
           perks={['Cash Prize', 'VC Fast-Track Meetings', 'Cloud Credits', 'Global Stage Feature', 'Incubation Program']}
         />
         <PrizeCard 
-          rank="RANK 03" icon="🥉" amount="₹20,000" label="BRONZE CORE"
+          rank="RANK 03" icon="🥉" amount="₹15,000" label="BRONZE CORE"
           perks={['Cash Prize', 'Community Recognition', 'Swag Pack Pro', 'Certificate']}
         />
+      </div>
+
+      {/* Special Prizes */}
+      <div className="max-w-4xl mx-auto">
+         <div className="font-code text-cyan/60 text-center text-[10px] tracking-[6px] mb-10 uppercase animate-pulse">--- SPECIAL RECOGNITION ---</div>
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <PrizeCard 
+              rank="SPECIAL 01" icon="⚡" amount="₹10,000" label="INNOVATION SPARK" isSpecial
+              perks={['Outstanding technical implementation', 'Exclusive Swag', 'Certificate of Excellence']}
+            />
+            <PrizeCard 
+              rank="SPECIAL 02" icon="💎" amount="₹10,000" label="IMPACT GEM" isSpecial
+              perks={['Highest social/environmental impact', 'Exclusive Swag', 'Certificate of Excellence']}
+            />
+         </div>
       </div>
     </section>
   );
