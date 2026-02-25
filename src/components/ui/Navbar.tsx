@@ -34,7 +34,7 @@ export const Navbar = () => {
       </div>
       
       <ul className="hidden md:flex gap-10 items-center">
-        {['about', 'tracks', 'timeline', 'prizes'].map((link) => (
+        {['tracks', 'timeline', 'prizes', 'about'].map((link) => (
           <li key={link}>
             <button 
               onClick={() => scrollTo(link)}

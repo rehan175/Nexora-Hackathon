@@ -4,7 +4,7 @@ import React from 'react';
 
 export const AboutVision = () => {
   return (
-    <section id="about" className="py-32 px-6 relative overflow-hidden">
+    <section id="about" className="py-32 px-6 relative overflow-hidden bg-gradient-to-t from-cyan/5 to-transparent border-t border-cyan/5">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* About Section */}
         <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
@@ -64,6 +64,11 @@ export const AboutVision = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Visual HUD element for the bottom of the section */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 font-code text-[10px] text-cyan/20 tracking-[8px] uppercase pointer-events-none">
+        End of Transmission // Grid_Finalized
       </div>
     </section>
   );
