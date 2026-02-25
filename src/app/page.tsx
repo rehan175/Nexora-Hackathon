@@ -34,7 +34,7 @@ export default function Home() {
           <a href="#" className="hover:text-cyan transition-colors">PRIVACY</a>
           <a href="#" className="hover:text-cyan transition-colors">TERMS</a>
           <a href="#" className="hover:text-cyan transition-colors">CONTACT</a>
-          <a href="#" className="hover:text-cyan transition-colors">SLACK</a>
+          <a href="#" className="hover:text-cyan transition-colors">DISCORD</a>
         </div>
       </footer>
       
