@@ -1,6 +1,6 @@
-
 import { Navbar } from '@/components/ui/Navbar';
 import { Hero } from '@/components/sections/Hero';
+import { AboutVision } from '@/components/sections/AboutVision';
 import { Stats } from '@/components/sections/Stats';
 import { Tracks } from '@/components/sections/Tracks';
 import { Timeline } from '@/components/sections/Timeline';
@@ -19,6 +19,7 @@ export default function Home() {
       <Navbar />
       
       <Hero />
+      <AboutVision />
       <Stats />
       <Tracks />
       <Timeline />
