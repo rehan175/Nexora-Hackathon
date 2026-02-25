@@ -1,0 +1,11 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Futuristic digital grid",
+      "imageUrl": "https://picsum.photos/seed/nexora-hero/1920/1080",
+      "imageHint": "cyberpunk grid"
+    }
+  ]
+}
