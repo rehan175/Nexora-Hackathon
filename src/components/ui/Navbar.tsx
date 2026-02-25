@@ -34,13 +34,13 @@ export const Navbar = () => {
       </div>
       
       <ul className="hidden md:flex gap-10 items-center">
-        {['tracks', 'timeline', 'prizes', 'about'].map((link) => (
+        {['tracks', 'timeline', 'prizes', 'about', 'venue'].map((link) => (
           <li key={link}>
             <button 
               onClick={() => scrollTo(link)}
               className="font-body text-[13px] tracking-[3px] font-semibold text-muted-foreground hover:text-cyan uppercase relative group py-2"
             >
-              {link}
+              {link === 'venue' ? 'Contact' : link}
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-cyan transition-all group-hover:w-full" />
             </button>
           </li>

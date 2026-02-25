@@ -24,8 +24,8 @@ export default function Home() {
       <Timeline />
       <Prizes />
       <Register />
-      <VenueContact />
       <AboutVision />
+      <VenueContact />
 
       <footer className="relative z-10 px-8 py-12 border-t border-cyan/10 flex flex-col md:flex-row items-center justify-between font-code text-[11px] text-muted-foreground/40 tracking-[2px] gap-8">
         <div className="font-headline font-black text-xl tracking-[6px] text-white">NEXORA</div>
