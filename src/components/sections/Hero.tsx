@@ -53,6 +53,7 @@ export const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden z-[1]">
+      {/* Background HUD Rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
         <Ring size={300} cw />
         <Ring size={480} dashed />
@@ -69,10 +70,11 @@ export const Hero = () => {
         </div>
 
         <h1 className="font-headline font-black text-6xl md:text-8xl lg:text-9xl text-white tracking-[12px] leading-tight mb-4 relative">
-          <span className="relative inline-block glow-text">
+          <span className="relative inline-block glow-text selection:bg-white selection:text-black">
             NEXORA
-            <span className="absolute inset-0 text-cyan opacity-70 clip-path-[polygon(0_0,100%_0,100%_33%,0_33%)] animate-glitch-1" style={{ animation: 'glitch 4s infinite' }}>NEXORA</span>
-            <span className="absolute inset-0 text-destructive opacity-50 clip-path-[polygon(0_66%,100%_66%,100%_100%,0_100%)] animate-glitch-2" style={{ animation: 'glitch 4s infinite' }}>NEXORA</span>
+            {/* 3D / Chromatic Aberration Layers */}
+            <span className="absolute inset-0 text-[#00d4ff] opacity-70 -translate-x-1 -translate-y-0.5 mix-blend-screen pointer-events-none select-none z-[-1]" aria-hidden="true">NEXORA</span>
+            <span className="absolute inset-0 text-[#ff0055] opacity-70 translate-x-1 translate-y-0.5 mix-blend-screen pointer-events-none select-none z-[-2]" aria-hidden="true">NEXORA</span>
           </span>
         </h1>
 
