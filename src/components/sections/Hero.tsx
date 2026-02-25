@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { useRouter } from 'next/navigation';
 
 export const Hero = () => {
-  const router = useRouter();
   const [timeLeft, setTimeLeft] = useState({ d: '00', h: '00', m: '00', s: '00' });
 
   useEffect(() => {
@@ -37,6 +35,13 @@ export const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const Ring = ({ size, dashed, cw }: { size: number; dashed?: boolean; cw?: boolean }) => (
     <div 
       className={`absolute border border-cyan/10 rounded-full flex items-center justify-center ${cw ? 'animate-rotate-cw' : 'animate-rotate-ccw'}`}
@@ -56,8 +61,8 @@ export const Hero = () => {
         <div className="absolute border border-cyan/5 rounded-full" style={{ width: 1020, height: 1020 }} />
       </div>
 
-      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
-        <div className="flex items-center justify-center gap-4 text-cyan font-code text-xs tracking-[4px] mb-6 uppercase">
+      <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 w-full max-w-5xl">
+        <div className="flex items-center justify-center gap-4 text-cyan font-code text-xs tracking-[4px] mb-6 uppercase w-full">
           <div className="h-[1px] w-12 bg-cyan/40" />
           ◈ 24-HOUR HACKATHON ◈
           <div className="h-[1px] w-12 bg-cyan/40" />
@@ -83,14 +88,14 @@ export const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button 
-            onClick={() => router.push('/register')}
+            onClick={() => scrollToSection('register')}
             className="bg-cyan text-background font-headline font-bold text-xs tracking-widest px-10 py-7 cyber-clip hover:glow-border transition-all"
           >
             REGISTER NOW
           </Button>
           <Button 
             variant="outline"
-            onClick={() => document.getElementById('tracks')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('tracks')}
             className="border-cyan/40 text-cyan bg-cyan/5 font-headline text-xs tracking-widest px-10 py-7 cyber-clip-bl hover:bg-cyan/15 hover:border-cyan transition-all"
           >
             EXPLORE TRACKS
