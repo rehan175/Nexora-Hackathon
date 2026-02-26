@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useEffect, useRef } from 'react';
@@ -14,6 +13,15 @@ export const CyberBackground = () => {
 
     let animationFrameId: number;
     let particles: { x: number; y: number; vx: number; vy: number; r: number; a: number }[] = [];
+
+    const getPrimaryColor = () => {
+      // Get HSL primary from computed style to sync with transition
+      if (typeof window === 'undefined') return '0, 212, 255';
+      const primary = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+      // Simple rough mapping from HSL to RGB string for canvas
+      if (primary.startsWith('15')) return '255, 85, 0'; // Ultron Orange
+      return '0, 212, 255'; // Jarvis Blue
+    };
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -38,9 +46,10 @@ export const CyberBackground = () => {
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const colorStr = getPrimaryColor();
       
       // Grid
-      ctx.strokeStyle = 'rgba(0, 212, 255, 0.03)';
+      ctx.strokeStyle = `rgba(${colorStr}, 0.03)`;
       ctx.lineWidth = 1;
       const gs = 80;
       for (let x = 0; x < canvas.width; x += gs) {
@@ -67,7 +76,7 @@ export const CyberBackground = () => {
         
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 212, 255, ${p.a * 0.5})`;
+        ctx.fillStyle = `rgba(${colorStr}, ${p.a * 0.5})`;
         ctx.fill();
       });
 
@@ -80,7 +89,7 @@ export const CyberBackground = () => {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(0, 212, 255, ${(1 - dist / 120) * 0.12})`;
+            ctx.strokeStyle = `rgba(${colorStr}, ${(1 - dist / 120) * 0.12})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }

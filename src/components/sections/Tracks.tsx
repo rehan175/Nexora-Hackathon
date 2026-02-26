@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
 
 export interface Problem {
   num: string;
@@ -97,7 +96,6 @@ export const trackData: Record<string, TrackInfo> = {
 };
 
 export const Tracks = () => {
-  const router = useRouter();
   const [selectedTrack, setSelectedTrack] = useState<TrackInfo | null>(null);
 
   const scrollToSection = (id: string) => {
@@ -110,11 +108,11 @@ export const Tracks = () => {
   return (
     <section id="tracks" className="py-32 px-6 max-w-7xl mx-auto">
       <div className="mb-16">
-        <div className="font-code text-cyan text-xs tracking-[5px] mb-3 opacity-70">// MISSION AREAS</div>
+        <div className="font-code text-primary text-xs tracking-[5px] mb-3 opacity-70">// MISSION AREAS</div>
         <h2 className="font-headline font-bold text-4xl md:text-5xl text-white mb-6">
-          Choose Your <span className="text-cyan">Track</span>
+          Choose Your <span className="text-primary">Track</span>
         </h2>
-        <div className="w-20 h-0.5 bg-cyan relative after:content-[''] after:absolute after:-right-5 after:-top-[3px] after:w-2 after:h-2 after:border-2 after:border-cyan after:rounded-full" />
+        <div className="w-20 h-0.5 bg-primary relative after:content-[''] after:absolute after:-right-5 after:-top-[3px] after:w-2 after:h-2 after:border-2 after:border-primary after:rounded-full" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,14 +120,14 @@ export const Tracks = () => {
           <div 
             key={id}
             onClick={() => setSelectedTrack(track)}
-            className="group bg-card/60 border border-cyan/10 p-10 cyber-clip-tr hover:border-cyan/40 hover:-translate-y-1.5 transition-all cursor-pointer relative"
+            className="group bg-card/60 border border-primary/10 p-10 cyber-clip-tr hover:border-primary/40 hover:-translate-y-1.5 transition-all cursor-pointer relative"
           >
-            <div className="absolute top-0 right-0 w-6 h-6 border-b-[24px] border-b-transparent border-r-[24px] border-r-cyan/30" />
-            <div className="text-4xl mb-6 drop-shadow-[0_0_10px_rgba(0,212,255,0.5)]">{track.icon}</div>
+            <div className="absolute top-0 right-0 w-6 h-6 border-b-[24px] border-b-transparent border-r-[24px] border-r-primary/30" />
+            <div className="text-4xl mb-6 drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)]">{track.icon}</div>
             <h3 className="font-headline text-lg font-bold text-white tracking-widest mb-3 uppercase">{track.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">{track.desc}</p>
-            <span className="inline-block border border-cyan/30 px-3 py-1 font-code text-[10px] tracking-widest text-cyan uppercase">{track.tag}</span>
-            <div className="mt-4 flex items-center gap-2 font-code text-[10px] tracking-widest text-cyan/40">
+            <span className="inline-block border border-primary/30 px-3 py-1 font-code text-[10px] tracking-widest text-primary uppercase">{track.tag}</span>
+            <div className="mt-4 flex items-center gap-2 font-code text-[10px] tracking-widest text-primary/40">
               <span className="text-[8px]">▶</span> VIEW PROBLEM STATEMENTS
             </div>
           </div>
@@ -137,28 +135,28 @@ export const Tracks = () => {
       </div>
 
       <Dialog open={!!selectedTrack} onOpenChange={() => setSelectedTrack(null)}>
-        <DialogContent className="max-w-3xl bg-card border-cyan/30 cyber-clip text-foreground overflow-y-auto max-h-[90vh]">
-          <DialogHeader className="flex flex-row items-center gap-4 border-b border-cyan/10 pb-6">
+        <DialogContent className="max-w-3xl bg-card border-primary/30 cyber-clip text-foreground overflow-y-auto max-h-[90vh]">
+          <DialogHeader className="flex flex-row items-center gap-4 border-b border-primary/10 pb-6">
             <div className="text-5xl">{selectedTrack?.icon}</div>
             <div>
-              <div className="font-code text-[10px] tracking-[4px] text-cyan opacity-70 uppercase">// MISSION_SPECS</div>
+              <div className="font-code text-[10px] tracking-[4px] text-primary opacity-70 uppercase">// MISSION_SPECS</div>
               <DialogTitle className="font-headline text-2xl tracking-widest text-white mt-1 uppercase">{selectedTrack?.title}</DialogTitle>
             </div>
           </DialogHeader>
           
           <div className="py-6 space-y-6">
-            <div className="bg-cyan/5 border-l-2 border-cyan p-4">
-              <p className="text-sm text-cyan/80 font-body tracking-wide leading-relaxed italic">
+            <div className="bg-primary/5 border-l-2 border-primary p-4">
+              <p className="text-sm text-primary/80 font-body tracking-wide leading-relaxed italic">
                 "{selectedTrack?.intro}"
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-code text-xs text-cyan tracking-[3px] uppercase">Avaliable Challenges:</h4>
+              <h4 className="font-code text-xs text-primary tracking-[3px] uppercase">Avaliable Challenges:</h4>
               {selectedTrack?.problems.map((p) => (
-                <div key={p.num} className="group bg-muted/40 border border-cyan/10 border-l-4 border-l-cyan p-6 hover:bg-cyan/5 hover:border-cyan/30 transition-all">
+                <div key={p.num} className="group bg-muted/40 border border-primary/10 border-l-4 border-l-primary p-6 hover:bg-primary/5 hover:border-primary/30 transition-all">
                   <div className="flex justify-between items-start mb-2">
-                    <span className="font-code text-[9px] text-cyan/50 tracking-widest">{p.num}</span>
+                    <span className="font-code text-[9px] text-primary/50 tracking-widest">{p.num}</span>
                     <span className={`font-code text-[9px] tracking-widest px-2 py-0.5 border rounded uppercase ${
                       p.diff === 'hard' ? 'text-destructive border-destructive/30' : 
                       p.diff === 'medium' ? 'text-gold border-gold/30' : 'text-green-400 border-green-400/30'
@@ -174,7 +172,7 @@ export const Tracks = () => {
           </div>
 
           <Button 
-            className="w-full bg-transparent border border-cyan text-cyan hover:bg-cyan hover:text-background font-headline text-xs tracking-[3px]"
+            className="w-full bg-transparent border border-primary text-primary hover:bg-primary hover:text-background font-headline text-xs tracking-[3px]"
             onClick={() => {
               setSelectedTrack(null);
               scrollToSection('register');

@@ -34,9 +34,9 @@ const StatCard = ({ target, unit = '', label, suffix = '' }: { target: number; u
   }, [target]);
 
   return (
-    <div ref={ref} className="group bg-card/80 p-12 text-center border border-cyan/10 relative overflow-hidden transition-all hover:border-cyan/30 hover:-translate-y-1">
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="font-headline font-black text-5xl text-cyan glow-text leading-none">
+    <div ref={ref} className="group bg-card/80 p-12 text-center border border-primary/10 relative overflow-hidden transition-all hover:border-primary/30 hover:-translate-y-1">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="font-headline font-black text-5xl text-primary glow-text leading-none">
         {count}{unit}{suffix}
       </div>
       <div className="font-code text-xs tracking-widest text-muted-foreground mt-4 uppercase">
@@ -48,8 +48,8 @@ const StatCard = ({ target, unit = '', label, suffix = '' }: { target: number; u
 
 export const Stats = () => {
   return (
-    <section id="stats" className="bg-gradient-to-b from-background via-cyan/5 to-background py-32 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-cyan/5">
+    <section id="stats" className="bg-gradient-to-b from-background via-primary/5 to-background py-32 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-primary/5">
         <StatCard target={24} unit="H" label="NON-STOP HACKING" />
         <StatCard target={300} unit="+" label="DEVELOPERS" />
         <StatCard target={1} suffix="LAKH" label="PRIZE POOL (₹)" />

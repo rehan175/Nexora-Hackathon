@@ -44,10 +44,10 @@ export const Hero = () => {
 
   const Ring = ({ size, dashed, cw }: { size: number; dashed?: boolean; cw?: boolean }) => (
     <div 
-      className={`absolute border border-cyan/10 rounded-full flex items-center justify-center ${cw ? 'animate-rotate-cw' : 'animate-rotate-ccw'}`}
+      className={`absolute border border-primary/10 rounded-full flex items-center justify-center ${cw ? 'animate-rotate-cw' : 'animate-rotate-ccw'}`}
       style={{ width: size, height: size, borderStyle: dashed ? 'dashed' : 'solid' }}
     >
-      <div className="absolute top-1/2 -left-1 w-2 h-2 bg-cyan rounded-full shadow-[0_0_10px_#00d4ff] -translate-y-1/2" />
+      <div className="absolute top-1/2 -left-1 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_hsl(var(--primary))] -translate-y-1/2" />
     </div>
   );
 
@@ -59,30 +59,30 @@ export const Hero = () => {
         <Ring size={480} dashed />
         <Ring size={660} cw />
         <Ring size={840} dashed />
-        <div className="absolute border border-cyan/5 rounded-full" style={{ width: 1020, height: 1020 }} />
+        <div className="absolute border border-primary/5 rounded-full" style={{ width: 1020, height: 1020 }} />
       </div>
 
       <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 w-full max-w-5xl">
-        <div className="flex items-center justify-center gap-4 text-cyan font-code text-xs tracking-[4px] mb-6 uppercase w-full">
-          <div className="h-[1px] w-12 bg-cyan/40" />
+        <div className="flex items-center justify-center gap-4 text-primary font-code text-xs tracking-[4px] mb-6 uppercase w-full">
+          <div className="h-[1px] w-12 bg-primary/40" />
           ◈ 24-HOUR HACKATHON ◈
-          <div className="h-[1px] w-12 bg-cyan/40" />
+          <div className="h-[1px] w-12 bg-primary/40" />
         </div>
 
         <h1 className="font-headline font-black text-6xl md:text-8xl lg:text-9xl text-white tracking-[12px] leading-tight mb-4 relative">
           <span className="relative inline-block glow-text selection:bg-white selection:text-black">
             NEXORA
             {/* 3D / Chromatic Aberration Layers */}
-            <span className="absolute inset-0 text-[#00d4ff] opacity-70 -translate-x-1 -translate-y-0.5 mix-blend-screen pointer-events-none select-none z-[-1]" aria-hidden="true">NEXORA</span>
+            <span className="absolute inset-0 text-primary opacity-70 -translate-x-1 -translate-y-0.5 mix-blend-screen pointer-events-none select-none z-[-1]" aria-hidden="true">NEXORA</span>
             <span className="absolute inset-0 text-[#ff0055] opacity-70 translate-x-1 translate-y-0.5 mix-blend-screen pointer-events-none select-none z-[-2]" aria-hidden="true">NEXORA</span>
           </span>
         </h1>
 
-        <p className="font-body text-sm md:text-xl tracking-[6px] text-cyan/60 uppercase mb-8">
+        <p className="font-body text-sm md:text-xl tracking-[6px] text-primary/60 uppercase mb-8">
           Build the Future &middot; Break the Limits &middot; Own the Grid
         </p>
 
-        <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-cyan to-transparent mx-auto mb-8" />
+        <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8" />
 
         <p className="max-w-xl mx-auto text-muted-foreground leading-relaxed tracking-wide text-base md:text-lg mb-12">
           One planet. One grid. 24 hours to change everything. NEXORA unites the world&apos;s most relentless builders for a single continuous sprint into the future of intelligent systems.
@@ -91,14 +91,14 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button 
             onClick={() => scrollToSection('register')}
-            className="bg-cyan text-background font-headline font-bold text-xs tracking-widest px-10 py-7 cyber-clip hover:glow-border transition-all"
+            className="bg-primary text-background font-headline font-bold text-xs tracking-widest px-10 py-7 cyber-clip hover:glow-border transition-all"
           >
             REGISTER NOW
           </Button>
           <Button 
             variant="outline"
             onClick={() => scrollToSection('tracks')}
-            className="border-cyan/40 text-cyan bg-cyan/5 font-headline text-xs tracking-widest px-10 py-7 cyber-clip-bl hover:bg-cyan/15 hover:border-cyan transition-all"
+            className="border-primary/40 text-primary bg-primary/5 font-headline text-xs tracking-widest px-10 py-7 cyber-clip-bl hover:bg-primary/15 hover:border-primary transition-all"
           >
             EXPLORE TRACKS
           </Button>
@@ -113,13 +113,13 @@ export const Hero = () => {
           ].map((item, i) => (
             <React.Fragment key={item.label}>
               <div className="relative p-1">
-                <div className="absolute inset-0 border border-cyan/20 cyber-clip" />
+                <div className="absolute inset-0 border border-primary/20 cyber-clip" />
                 <div className="px-4 py-2 md:px-6 md:py-4">
-                  <span className="block font-headline text-4xl md:text-5xl font-black text-cyan glow-text leading-none">{item.val}</span>
-                  <span className="block font-code text-[10px] text-cyan/50 tracking-widest mt-2">{item.label}</span>
+                  <span className="block font-headline text-4xl md:text-5xl font-black text-primary glow-text leading-none">{item.val}</span>
+                  <span className="block font-code text-[10px] text-primary/50 tracking-widest mt-2">{item.label}</span>
                 </div>
               </div>
-              {i < 3 && <span className="text-3xl md:text-4xl text-cyan/40 self-center animate-pulse">:</span>}
+              {i < 3 && <span className="text-3xl md:text-4xl text-primary/40 self-center animate-pulse">:</span>}
             </React.Fragment>
           ))}
         </div>
